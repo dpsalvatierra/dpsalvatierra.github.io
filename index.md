@@ -1,6 +1,6 @@
 ---
 layout: default
-lang: es
+lang: en
 permalink: /
 title: Daniel Salvatierra
 description: Software práctico, automatización y flujos de trabajo listos para la nube, por Daniel Salvatierra.
