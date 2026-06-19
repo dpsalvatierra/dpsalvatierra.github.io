@@ -1,7 +1,8 @@
 title: Daniel Salvatierra
-description: Practical software, automation, and cloud-ready workflows by Daniel Salvatierra.
+description: Software práctico, automatización y flujos de trabajo listos para la nube, por Daniel Salvatierra.
 url: "https://dpsalvatierra.github.io"
 baseurl: ""
+lang: es
 
 theme: jekyll-theme-midnight
 plugins:

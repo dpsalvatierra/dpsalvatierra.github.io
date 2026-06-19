@@ -10,20 +10,17 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <header class="site-header" aria-label="Primary">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+    <header class="site-header" aria-label="Principal">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Inicio de {{ site.title }}">
         <span class="brand-mark">DS</span>
         <span>{{ site.title }}</span>
       </a>
-      <nav class="site-nav" aria-label="Site navigation">
-        <a href="#about">About</a>
-        <a href="#focus">Focus</a>
-        <a href="#work">Work</a>
-        <a href="#principles">Principles</a>
-        <a href="#topics">Topics</a>
-        <a href="#media">Media</a>
+      <nav class="site-nav" aria-label="Navegación del sitio">
+        <a href="#about">Sobre mí</a>
+        <a href="#focus">Enfoque</a>
+        <a href="#media">Contacto</a>
         <a href="{{ page.github_url }}" rel="me">GitHub</a>
       </nav>
     </header>
@@ -35,22 +32,22 @@
         <div class="hero-inner">
           <p class="eyebrow">{{ page.eyebrow }}</p>
           {% if page.logo_path %}
-            <img class="hero-logo" src="{{ page.logo_path | relative_url }}" alt="{{ page.creative_brand }} logo">
+            <img class="hero-logo" src="{{ page.logo_path | relative_url }}" alt="logo de {{ page.creative_brand }}">
           {% endif %}
           <h1 id="page-title">{{ page.title }}</h1>
           <p class="headline">{{ page.headline }}</p>
           <p class="intro">{{ page.intro }}</p>
-          <div class="hero-actions" aria-label="Primary actions">
-            <a class="button button-primary" href="{{ page.github_url }}">View GitHub</a>
-            <a class="button button-secondary" href="#work">Selected Work</a>
+          <div class="hero-actions" aria-label="Acciones principales">
+            <a class="button button-primary" href="{{ page.github_url }}">Ver GitHub</a>
+            <a class="button button-secondary" href="#focus">Lo que hago</a>
           </div>
         </div>
       </section>
 
       <section class="section" id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <p class="section-kicker">About</p>
-          <h2 id="about-title">What I do and why</h2>
+          <p class="section-kicker">Sobre mí</p>
+          <h2 id="about-title">Qué hago y por qué</h2>
         </div>
         <div class="work-list">
           {% for section in page.story_sections %}
@@ -66,8 +63,8 @@
 
       <section class="section" id="focus" aria-labelledby="focus-title">
         <div class="section-heading">
-          <p class="section-kicker">Focus</p>
-          <h2 id="focus-title">What I build</h2>
+          <p class="section-kicker">Enfoque</p>
+          <h2 id="focus-title">En qué trabajo</h2>
         </div>
         <div class="focus-grid">
           {% for area in page.focus_areas %}
@@ -80,66 +77,20 @@
         </div>
       </section>
 
-      <section class="section work-section" id="work" aria-labelledby="work-title">
-        <div class="section-heading">
-          <p class="section-kicker">Selected Work</p>
-          <h2 id="work-title">Practical, inspectable systems</h2>
-        </div>
-        <div class="work-list">
-          {% for item in page.selected_work %}
-            <article class="work-item">
-              <div>
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-              </div>
-              <ul class="tag-list" aria-label="{{ item.title }} tags">
-                {% for tag in item.tags %}
-                  <li>{{ tag }}</li>
-                {% endfor %}
-              </ul>
-            </article>
-          {% endfor %}
-        </div>
-      </section>
-
-      <section class="section principles-section" id="principles" aria-labelledby="principles-title">
-        <div class="section-heading">
-          <p class="section-kicker">Principles</p>
-          <h2 id="principles-title">How I approach the work</h2>
-        </div>
-        <ol class="principles-list">
-          {% for principle in page.principles %}
-            <li>{{ principle }}</li>
-          {% endfor %}
-        </ol>
-      </section>
-
-      <section class="section" id="topics" aria-labelledby="topics-title">
-        <div class="section-heading">
-          <p class="section-kicker">On This Site</p>
-          <h2 id="topics-title">What you'll find here</h2>
-        </div>
-        <ul class="tag-list" aria-label="Site topics">
-          {% for topic in page.site_topics %}
-            <li>{{ topic }}</li>
-          {% endfor %}
-        </ul>
-      </section>
-
       <section class="contact-band" aria-labelledby="contact-title">
         <div>
-          <p class="section-kicker">Connect</p>
-          <h2 id="contact-title">Find the source and follow the work.</h2>
+          <p class="section-kicker">Conecta</p>
+          <h2 id="contact-title">Explora el código y sigue el trabajo.</h2>
           <div class="brand-block">
             {% if page.logo_path %}
-              <img class="brand-logo" src="{{ page.logo_path | relative_url }}" alt="{{ page.creative_brand }} crest">
+              <img class="brand-logo" src="{{ page.logo_path | relative_url }}" alt="emblema de {{ page.creative_brand }}">
             {% endif %}
             <p class="intro"><strong>{{ page.creative_brand }}</strong>: {{ page.creative_brand_pitch }}</p>
           </div>
         </div>
         <div class="contact-actions" id="media">
-          <a class="button button-primary" href="{{ page.github_url }}">GitHub Profile</a>
-          <a class="button button-secondary" href="{{ page.repo_url }}">Site Repository</a>
+          <a class="button button-primary" href="{{ page.github_url }}">Perfil de GitHub</a>
+          <a class="button button-secondary" href="{{ page.repo_url }}">Repositorio del sitio</a>
           {% for link in page.media_links %}
             <a class="button button-secondary" href="{{ link.url }}">{{ link.label }}</a>
           {% endfor %}
@@ -149,7 +100,7 @@
 
     <footer class="site-footer">
       <span>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}</span>
-      <span>Built with Jekyll and GitHub Pages.</span>
+      <span>Hecho con Jekyll y GitHub Pages.</span>
     </footer>
   </body>
 </html>
