@@ -1,0 +1,9 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "bundle": true,
+        "/^cd /home/dsalvat1/dpsalvatierra\\.github\\.io && ruby -v && bundle -v && bundle install 2>&1 \\| tail -n 20$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}

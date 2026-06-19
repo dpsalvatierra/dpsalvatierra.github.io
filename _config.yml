@@ -1,0 +1,25 @@
+title: Daniel Salvatierra
+description: Practical software, automation, and cloud-ready workflows by Daniel Salvatierra.
+url: "https://dpsalvatierra.github.io"
+baseurl: ""
+
+theme: jekyll-theme-midnight
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+author:
+  name: Daniel Salvatierra
+  github: dpsalvatierra
+
+github_username: dpsalvatierra
+repository: dpsalvatierra/dpsalvatierra.github.io
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
