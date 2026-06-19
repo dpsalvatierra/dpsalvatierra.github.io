@@ -1,27 +1,43 @@
+{% assign lang = page.lang | default: site.lang | default: 'es' %}
+{% assign t = site.data.i18n[lang] %}
+{% assign s = site.data.i18n.shared %}
 <!doctype html>
-<html lang="{{ site.lang | default: 'en-US' }}">
+<html lang="{{ lang }}">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#07090d">
-    {% seo %}
+    <title>{{ t.title }} | {{ t.description }}</title>
+    {% seo title=false %}
+    {% for entry in site.data.i18n.languages %}
+      <link rel="alternate" hreflang="{{ entry[0] }}" href="{{ entry[1].url | absolute_url }}">
+    {% endfor %}
     <link rel="icon" type="image/png" href="{{ '/assets/img/logo.png' | relative_url }}">
     <link rel="apple-touch-icon" href="{{ '/assets/img/logo.png' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   </head>
   <body>
-    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <a class="skip-link" href="#main">{{ t.skip_link }}</a>
 
-    <header class="site-header" aria-label="Principal">
-      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Inicio de {{ site.title }}">
+    <header class="site-header" aria-label="{{ t.header_label }}">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ t.home_label }} {{ t.title }}">
         <span class="brand-mark">DS</span>
-        <span>{{ site.title }}</span>
+        <span>{{ t.title }}</span>
       </a>
-      <nav class="site-nav" aria-label="Navegación del sitio">
-        <a href="#about">Sobre mí</a>
-        <a href="#focus">Enfoque</a>
-        <a href="#media">Contacto</a>
-        <a href="{{ page.github_url }}" rel="me">GitHub</a>
+      <nav class="site-nav" aria-label="{{ t.nav_label }}">
+        <a href="#about">{{ t.nav.about }}</a>
+        <a href="#focus">{{ t.nav.focus }}</a>
+        <a href="#media">{{ t.nav.contact }}</a>
+        <a href="{{ s.github_url }}" rel="me">GitHub</a>
+        <span class="lang-toggle" role="group" aria-label="{{ t.lang_switch_label }}">
+          {% for entry in site.data.i18n.languages %}
+            {% if entry[0] == lang %}
+              <span class="lang-current" aria-current="true">{{ entry[1].label }}</span>
+            {% else %}
+              <a href="{{ entry[1].url | relative_url }}" hreflang="{{ entry[0] }}" lang="{{ entry[0] }}">{{ entry[1].label }}</a>
+            {% endif %}
+          {% endfor %}
+        </span>
       </nav>
     </header>
 
@@ -30,27 +46,27 @@
         <div class="hero-media" aria-hidden="true"></div>
         <div class="hero-shade" aria-hidden="true"></div>
         <div class="hero-inner">
-          <p class="eyebrow">{{ page.eyebrow }}</p>
-          {% if page.logo_path %}
-            <img class="hero-logo" src="{{ page.logo_path | relative_url }}" alt="logo de {{ page.creative_brand }}">
+          <p class="eyebrow">{{ t.eyebrow }}</p>
+          {% if s.logo_path %}
+            <img class="hero-logo" src="{{ s.logo_path | relative_url }}" alt="{{ t.logo_alt_prefix }} {{ s.creative_brand }}">
           {% endif %}
-          <h1 id="page-title">{{ page.title }}</h1>
-          <p class="headline">{{ page.headline }}</p>
-          <p class="intro">{{ page.intro }}</p>
-          <div class="hero-actions" aria-label="Acciones principales">
-            <a class="button button-primary" href="{{ page.github_url }}">Ver GitHub</a>
-            <a class="button button-secondary" href="#focus">Lo que hago</a>
+          <h1 id="page-title">{{ t.title }}</h1>
+          <p class="headline">{{ t.headline }}</p>
+          <p class="intro">{{ t.intro }}</p>
+          <div class="hero-actions" aria-label="{{ t.hero_actions_label }}">
+            <a class="button button-primary" href="{{ s.github_url }}">{{ t.cta_view_github }}</a>
+            <a class="button button-secondary" href="#focus">{{ t.cta_what_i_do }}</a>
           </div>
         </div>
       </section>
 
       <section class="section" id="about" aria-labelledby="about-title">
         <div class="section-heading">
-          <p class="section-kicker">Sobre mí</p>
-          <h2 id="about-title">Qué hago y por qué</h2>
+          <p class="section-kicker">{{ t.about_kicker }}</p>
+          <h2 id="about-title">{{ t.about_title }}</h2>
         </div>
         <div class="work-list">
-          {% for section in page.story_sections %}
+          {% for section in t.story_sections %}
             <article class="work-item">
               <div>
                 <h3>{{ section.title }}</h3>
@@ -63,11 +79,11 @@
 
       <section class="section" id="focus" aria-labelledby="focus-title">
         <div class="section-heading">
-          <p class="section-kicker">Enfoque</p>
-          <h2 id="focus-title">En qué trabajo</h2>
+          <p class="section-kicker">{{ t.focus_kicker }}</p>
+          <h2 id="focus-title">{{ t.focus_title }}</h2>
         </div>
         <div class="focus-grid">
-          {% for area in page.focus_areas %}
+          {% for area in t.focus_areas %}
             <article class="feature-card">
               <span class="card-index">0{{ forloop.index }}</span>
               <h3>{{ area.title }}</h3>
@@ -79,19 +95,19 @@
 
       <section class="contact-band" aria-labelledby="contact-title">
         <div>
-          <p class="section-kicker">Conecta</p>
-          <h2 id="contact-title">Explora el código y sigue el trabajo.</h2>
+          <p class="section-kicker">{{ t.contact_kicker }}</p>
+          <h2 id="contact-title">{{ t.contact_title }}</h2>
           <div class="brand-block">
-            {% if page.logo_path %}
-              <img class="brand-logo" src="{{ page.logo_path | relative_url }}" alt="emblema de {{ page.creative_brand }}">
+            {% if s.logo_path %}
+              <img class="brand-logo" src="{{ s.logo_path | relative_url }}" alt="{{ t.emblem_alt_prefix }} {{ s.creative_brand }}">
             {% endif %}
-            <p class="intro"><strong>{{ page.creative_brand }}</strong>: {{ page.creative_brand_pitch }}</p>
+            <p class="intro"><strong>{{ s.creative_brand }}</strong>: {{ t.creative_brand_pitch }}</p>
           </div>
         </div>
         <div class="contact-actions" id="media">
-          <a class="button button-primary" href="{{ page.github_url }}">Perfil de GitHub</a>
-          <a class="button button-secondary" href="{{ page.repo_url }}">Repositorio del sitio</a>
-          {% for link in page.media_links %}
+          <a class="button button-primary" href="{{ s.github_url }}">{{ t.cta_github_profile }}</a>
+          <a class="button button-secondary" href="{{ s.repo_url }}">{{ t.cta_site_repo }}</a>
+          {% for link in s.media_links %}
             <a class="button button-secondary" href="{{ link.url }}">{{ link.label }}</a>
           {% endfor %}
         </div>
@@ -99,8 +115,8 @@
     </main>
 
     <footer class="site-footer">
-      <span>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}</span>
-      <span>Hecho con Jekyll y GitHub Pages.</span>
+      <span>&copy; {{ 'now' | date: '%Y' }} {{ t.title }}</span>
+      <span>{{ t.footer_note }}</span>
     </footer>
   </body>
 </html>

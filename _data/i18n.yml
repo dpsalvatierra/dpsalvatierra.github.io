@@ -1,0 +1,128 @@
+# Localized content and UI strings for the site.
+# Add a new top-level language key (matching a page `lang`) to add a language.
+# `shared` holds values that are identical across languages.
+
+languages:
+  es:
+    label: ES
+    name: Español
+    url: /
+  en:
+    label: EN
+    name: English
+    url: /en/
+
+shared:
+  github_url: https://github.com/dpsalvatierra
+  repo_url: https://github.com/dpsalvatierra/dpsalvatierra.github.io
+  logo_path: /assets/img/logo.png
+  creative_brand: Dark Artificial (TM)
+  media_links:
+    - label: TikTok
+      url: https://tiktok.com/@dark_artificial
+    - label: Spotify
+      url: https://open.spotify.com/artist/0FjSyBikWw2xSQpnK4CrPB
+    - label: YouTube Music
+      url: https://music.youtube.com/@darkartificial
+    - label: Apple Music
+      url: https://music.apple.com/us/artist/dark-artificial/1837979212
+
+es:
+  # Document metadata
+  title: Daniel Salvatierra
+  description: Software práctico, automatización y flujos de trabajo listos para la nube, por Daniel Salvatierra.
+
+  # UI strings
+  skip_link: Saltar al contenido
+  header_label: Principal
+  home_label: Inicio de
+  nav_label: Navegación del sitio
+  lang_switch_label: Idioma
+  nav:
+    about: Sobre mí
+    focus: Enfoque
+    contact: Contacto
+  hero_actions_label: Acciones principales
+  cta_view_github: Ver GitHub
+  cta_what_i_do: Lo que hago
+  logo_alt_prefix: logo de
+  emblem_alt_prefix: emblema de
+  about_kicker: Sobre mí
+  about_title: Qué hago y por qué
+  focus_kicker: Enfoque
+  focus_title: En qué trabajo
+  contact_kicker: Conecta
+  contact_title: Explora el código y sigue el trabajo.
+  cta_github_profile: Perfil de GitHub
+  cta_site_repo: Repositorio del sitio
+  footer_note: Hecho con Jekyll y GitHub Pages.
+
+  # Content
+  eyebrow: Ingeniería de soporte · Creatividad con IA · Desarrollo de apps
+  headline: Ingeniero de soporte. Explorador de IA. Creador de apps. Tecnólogo creativo. Ingeniero DevOps.
+  intro: Trabajo donde la fiabilidad se encuentra con la imaginación. La ingeniería de soporte mantiene mis sistemas con los pies en la tierra; el trabajo creativo con IA mantiene mis ideas en movimiento. El resultado son herramientas prácticas con un toque cinematográfico.
+  creative_brand_pitch: Una firma para visuales creados con IA, experimentos musicales y estudios multimedia moldeados por la precisión, la atmósfera y una rebeldía controlada.
+  story_sections:
+    - title: Qué es este sitio
+      body: Este es mi rincón de internet para proyectos, experimentos, notas y publicaciones ocasionales sobre soporte técnico, herramientas de IA, proyectos de apps, automatización, filosofía, running y la extraña relación entre la creatividad y la depuración.
+    - title: Ingeniería de soporte
+      body: La tecnología del mundo real no se preocupa por los diagramas perfectos. Las cosas fallan, los usuarios se atascan y los registros solo cuentan parte de la historia. Disfruto encontrando patrones, llegando a la causa raíz, explicando los problemas con claridad y dejando mejor documentación para que la siguiente persona empiece con ventaja.
+    - title: IA y experimentos creativos
+      body: Uso herramientas de IA de imagen, música y video para llevar las ideas de la imaginación a algo concreto. Los prompts ayudan con la velocidad, pero el gusto, la dirección y la edición siguen importando. La IA es poderosa, pero todavía necesita a una persona que sepa cuándo algo no funciona.
+  focus_areas:
+    - title: Tecnología × Creatividad
+      description: Me interesa sobre todo el cruce donde la experimentación creativa se encuentra con la ingeniería práctica y las ideas se convierten en herramientas reales.
+    - title: Creación asistida por IA
+      description: Los flujos de trabajo de IA para imagen, música y video me permiten probar conceptos rápido e iterar sobre el estilo, la atmósfera y la dirección.
+    - title: Automatización y mentalidad DevOps
+      description: Construir es divertido, pero mantener los sistemas sanos es donde ocurre el verdadero aprendizaje. Valoro la repetibilidad, la observabilidad y los valores por defecto útiles.
+
+en:
+  # Document metadata
+  title: Daniel Salvatierra
+  description: Practical software, automation, and cloud-ready workflows by Daniel Salvatierra.
+
+  # UI strings
+  skip_link: Skip to content
+  header_label: Primary
+  home_label: Home of
+  nav_label: Site navigation
+  lang_switch_label: Language
+  nav:
+    about: About
+    focus: Focus
+    contact: Contact
+  hero_actions_label: Primary actions
+  cta_view_github: View GitHub
+  cta_what_i_do: What I do
+  logo_alt_prefix: logo of
+  emblem_alt_prefix: emblem of
+  about_kicker: About
+  about_title: What I do and why
+  focus_kicker: Focus
+  focus_title: What I work on
+  contact_kicker: Connect
+  contact_title: Explore the code and follow the work.
+  cta_github_profile: GitHub profile
+  cta_site_repo: Site repository
+  footer_note: Built with Jekyll and GitHub Pages.
+
+  # Content
+  eyebrow: Support engineering · AI creativity · App development
+  headline: Support engineer. AI explorer. App builder. Creative technologist. DevOps engineer.
+  intro: I work where reliability meets imagination. Support engineering keeps my systems grounded; creative AI work keeps my ideas moving. The result is practical tools with a cinematic edge.
+  creative_brand_pitch: A signature for AI-crafted visuals, musical experiments, and multimedia studies shaped by precision, atmosphere, and controlled rebellion.
+  story_sections:
+    - title: What this site is
+      body: This is my corner of the internet for projects, experiments, notes, and the occasional post about technical support, AI tools, app projects, automation, philosophy, running, and the strange relationship between creativity and debugging.
+    - title: Support engineering
+      body: Real-world technology doesn't care about perfect diagrams. Things break, users get stuck, and logs only tell part of the story. I enjoy spotting patterns, getting to the root cause, explaining issues clearly, and leaving better documentation so the next person starts ahead.
+    - title: AI and creative experiments
+      body: I use image, music, and video AI tools to move ideas from imagination into something concrete. Prompts help with speed, but taste, direction, and editing still matter. AI is powerful, but it still needs a person who knows when something isn't working.
+  focus_areas:
+    - title: Technology × Creativity
+      description: I'm most interested in the intersection where creative experimentation meets practical engineering and ideas turn into real tools.
+    - title: AI-assisted creation
+      description: AI workflows for image, music, and video let me test concepts fast and iterate on style, atmosphere, and direction.
+    - title: Automation and a DevOps mindset
+      description: Building is fun, but keeping systems healthy is where the real learning happens. I value repeatability, observability, and helpful defaults.

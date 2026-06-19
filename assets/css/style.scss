@@ -144,6 +144,40 @@ h3 {
   padding: 0.35rem 0.1rem;
 }
 
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  margin-left: 0.35rem;
+  padding: 0.15rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.lang-toggle a,
+.lang-toggle .lang-current {
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  line-height: 1;
+}
+
+.lang-toggle a {
+  color: var(--muted);
+}
+
+.lang-toggle a:hover {
+  color: var(--text);
+}
+
+.lang-toggle .lang-current {
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 600;
+}
+
 .hero {
   position: relative;
   display: grid;
